@@ -5,50 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ميتال برو - Metal Pro</title>
   <style>
+    /* الخطوط والألوان الأساسية */
     body {
       font-family: Tahoma, Arial, sans-serif;
-      background: #f4f4f4;
+      background: #000; /* خلفية سوداء */
+      color: #FFD700; /* نص ذهبي */
       margin: 0;
       padding: 0;
       text-align: center;
       direction: rtl;
     }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 20px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    section {
-      padding: 20px;
-      background: #fff;
-      margin: 15px;
-      border-radius: 8px;
-      box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
-    }
     a {
-      color: #007BFF;
+      color: #FFD700;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
-    .contact {
-      font-size: 18px;
-      line-height: 2;
+
+    /* الهيدر */
+    header {
+      background: #111;
+      padding: 20px;
     }
+    header img {
+      max-width: 150px;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    header p {
+      margin: 5px 0 0 0;
+      font-size: 18px;
+    }
+
+    /* الأقسام */
+    section {
+      background: #111;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 2px 6px rgba(255,215,0,0.5);
+    }
+    section h2 {
+      margin-top: 0;
+      border-bottom: 1px solid #FFD700;
+      display: inline-block;
+      padding-bottom: 5px;
+      font-size: 24px;
+    }
+
+    /* معرض الصور */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 10px;
+      margin-top: 10px;
     }
     .gallery img {
       width: 100%;
       border-radius: 6px;
-      box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+      box-shadow: 0px 2px 5px rgba(255,215,0,0.5);
+    }
+
+    /* أرقام التواصل */
+    .contact {
+      font-size: 18px;
+      line-height: 2;
+    }
+
+    /* أزرار الشبكات */
+    .social a {
+      display: inline-block;
+      margin: 5px 10px;
+      font-size: 18px;
+    }
+
+    /* فوتر */
+    footer {
+      margin-top: 20px;
+      padding: 15px;
+      background: #111;
+      border-top: 1px solid #FFD700;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -56,32 +97,41 @@
 
   <!-- الهيدر -->
   <header>
+    <img src="77A5F453-66B9-4B98-BCE6-030DA6996DDA.jpeg" alt="شعار ميتال برو">
     <h1>ميتـال بـرو – Metal Pro</h1>
     <p>حدادة فرنجية وعامة – Steel Works</p>
   </header>
 
-  <!-- من نحن (نسخ كما هو من الموقع الحالي) -->
+  <!-- من نحن -->
   <section>
     <h2>من نحن</h2>
     <p>
-      نحن في ميتال برو نقدم خدمات الحدادة الفرنجية والديكور المعدني بجودة عالية
-      ونعمل لتقديم أجمل التصاميم العصرية للأبواب والشبابيك والخدمات الحديدية المختلفة.
+      نحن شركة حدادة ميتال برو نقوم بكافة أعمال الحديد بخبرة عالية وإتقان، ونسعى لتقديم أجمل التصاميم العصرية للأبواب، الشبابيك، الدرابزينات، الخزانات، والسلالم الداخلية والخارجية بجودة مميزة.
     </p>
   </section>
 
-  <!-- خدماتنا (نسخ كما هو من الموقع الحالي) -->
+  <!-- خدماتنا -->
   <section>
     <h2>خدماتنا</h2>
     <p>
-      صناعة الأبواب، الشبابيك، الديكورات الحديدية، الخيم القرميد، الجلسات الخارجية،
-      الهنكارات، مواقف السيارات، الخزانات بجميع الأحجام.
+      - تصنيع أبواب الحديد بأحدث الموديلات العصرية.<br>
+      - الشبابيك والحمايات الحديدية.<br>
+      - تصنيع خزانات المياه والمحروقات بكافة الأحجام.<br>
+      - تصنيع السلالم الداخلية والخارجية بطرق عصرية.<br>
+      - تصنيع جميع موديلات الدرابزينات.<br>
+      - خيم القرميد حسب الطلب وكافة أنواع الخيم.<br>
+      - تصنيع الهنكارات الصناعية، صناديق سيارات، ودفاعات سيارات.<br>
+      - جميع أعمال الديكور في الحديد، طاولات وكراسي للمطاعم حسب الطلب.<br>
+      - تجهيز ديكور لمحلات الألبسة وجميع أعمال الحديد حسب الطلب.
     </p>
   </section>
 
   <!-- العنوان -->
   <section>
-    <h2>📍 العنوان</h2>
-    <p>دير الزور / طريق البصيرة / قرية خشام جانب ثانوية خشام / محلات العزاوي للحدادة الفرنجية</p>
+    <h2>📍 عنوان المحل</h2>
+    <p>
+      دير الزور / طريق البصيرة / قرية خشام جانب ثانوية خشام / محلات العزاوي للحدادة الفرنجية
+    </p>
     <p><a href="https://maps.app.goo.gl/SwYpJ916rMkYRutz7?g_st=ac" target="_blank">فتح الموقع على خرائط جوجل</a></p>
   </section>
 
@@ -94,16 +144,18 @@
     </div>
   </section>
 
-  <!-- صفحات التواصل (قديمة + جديدة) -->
+  <!-- صفحات التواصل -->
   <section>
     <h2>🌐 صفحات التواصل</h2>
-    <p><a href="https://www.facebook.com/share/19W8GLdFaQ/" target="_blank">📘 فيسبوك</a></p>
-    <p><a href="#" target="_blank">▶️ يوتيوب</a></p>
-    <p><a href="#" target="_blank">📷 إنستغرام</a></p>
-    <p><a href="#" target="_blank">🎵 تيك توك</a></p>
+    <div class="social">
+      <a href="https://www.facebook.com/share/19W8GLdFaQ/" target="_blank">📘 فيسبوك</a>
+      <a href="https://youtube.com/@aax44?si=1ZB5i6OWpBUw-ueP" target="_blank">▶️ يوتيوب</a>
+      <a href="https://www.instagram.com/3alaadnan12?igsh=aXB3MGJyczJsemFl" target="_blank">📷 إنستغرام</a>
+      <a href="https://www.tiktok.com/@alaa4x4?_t=ZS-8yxXSQ7RxDU&_r=1" target="_blank">🎵 تيك توك</a>
+    </div>
   </section>
 
-  <!-- معرض الصور -->
+  <!-- معرض الأعمال -->
   <section>
     <h2>🖼️ معرض أعمالنا</h2>
     <div class="gallery">
@@ -114,132 +166,10 @@
     <p>📌 يمكنك إضافة أو استبدال صور أعمالك داخل مجلد <b>images</b>.</p>
   </section>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ميتال برو | Metal Pro – حدادة وابتكار</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Cairo', sans-serif;
-      background-color: #1f1f1f;
-      color: #fff;
-    }
-    header {
-      background-color: #2c2c2c;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #f39c12;
-    }
-    nav {
-      text-align: center;
-      margin: 20px 0;
-    }
-    nav a {
-      color: #f39c12;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    section {
-      padding: 30px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-    }
-    .gallery img {
-      width: 100%;
-      border: 2px solid #555;
-    }
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 15px;
-      background-color: #f39c12;
-      color: #000;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .contact a:hover {
-      background-color: #e67e22;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #111;
-      color: #aaa;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1>ميتال برو | Metal Pro</h1>
-  <p>الحدادة الحديثة – إبداع في تشكيل الحديد واللحام</p>
-</header>
-
-<nav>
-  <a href="#about">عنّي</a>
-  <a href="#services">الخدمات</a>
-  <a href="#gallery">أعمالي</a>
-  <a href="#contact">تواصل</a>
-</nav>
-
-<section id="about">
-  <h2>من نحن</h2>
-  <p>
-    أنا حرفي متخصص في مجال الحدادة واللحام الفني والصناعي. أقدم خدمات مبتكرة في تشكيل المعادن،
-    تصنيع الأبواب والنوافذ، الدرابزينات الحديدية، الديكورات، والعديد من الأعمال المعدنية حسب الطلب.
-  </p>
-  <p>
-    أعتمد على الخبرة والجودة في كل عمل، وأسعى لتقديم نتائج تليق بثقة الزبائن.
-  </p>
-</section>
-
-<section id="services">
-  <h2>الخدمات</h2>
-  <ul>
-    <li>تصنيع أبواب ونوافذ حديدية</li>
-    <li>درابزينات وسلالم داخلية وخارجية</li>
-    <li>لحام ديكوري وصناعي بجودة عالية</li>
-    <li>أعمال مخصصة حسب الطلب</li>
-  </ul>
-</section>
-
-<section id="gallery">
-  <h2>أعمالي</h2>
-  <div class="gallery">
-    <img src="https://via.placeholder.com/300x200?text=عمل+1" alt="عمل 1">
-    <img src="https://via.placeholder.com/300x200?text=عمل+2" alt="عمل 2">
-    <img src="https://via.placeholder.com/300x200?text=عمل+3" alt="عمل 3">
-    <img src="https://via.placeholder.com/300x200?text=عمل+4" alt="عمل 4">
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <h2>تواصل معنا</h2>
-  <p>تابعنا على منصات التواصل الاجتماعي:</p>
-  <a href="https://www.instagram.com/3alaadnan12?igsh=aXB3MGJyczJsemFl" target="_blank">إنستغرام</a>
-  <a href="https://youtube.com/@aax44?si=i4CMs55nUInKRhuO" target="_blank">يوتيوب</a>
-  <a href="https://www.tiktok.com/@alaa4x4?_t=ZS-8xEEXbfui82&_r=1" target="_blank">تيك توك</a>
-</section>
-
-<footer>
-  &copy; 2025 ميتال برو | Metal Pro – جميع الحقوق محفوظة.
-</footer>
+  <!-- الفوتر -->
+  <footer>
+    © جميع الحقوق محفوظة – ميتال برو 2025
+  </footer>
 
 </body>
 </html>
