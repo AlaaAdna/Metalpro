@@ -3,97 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ميتـال بـرو – Metal Pro</title>
+  <title>ميتـال برو – Metal Pro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary-color: #f4b400;  /* ذهبي */
-      --primary-hover: #ffca28;
-      --secondary-color: #111;   /* أسود داكن */
-      --light-bg: #f5f5f5;
-      --text-color: #222;
-      --card-bg: #fff;
+      --primary: #FFD700; /* ذهب ملكي */
+      --primary-hover: #fff176;
+      --bg-dark: #000;
+      --text-light: #fff;
+      --card-bg: #111;
     }
+
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Tajawal', sans-serif; }
 
     body {
-      margin: 0;
-      font-family: 'Tajawal', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
       line-height: 1.8;
-      color: var(--text-color);
-      background: var(--light-bg);
     }
 
-    h1, h2, h3 { margin: 0 0 15px; font-weight:700; color: var(--secondary-color); }
-    a { text-decoration: none; color: var(--secondary-color); transition: 0.3s; }
-    a:hover { color: var(--primary-color); }
-    .container { width: 90%; max-width: 1200px; margin: auto; }
+    a { text-decoration:none; color: var(--primary); transition:0.3s; }
+    a:hover { color: var(--primary-hover); }
 
     /* Navbar */
     .navbar {
-      background: var(--secondary-color);
-      color: #fff;
-      padding: 15px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      position: sticky; top:0; z-index:1000;
+      background: var(--bg-dark); padding:15px 0;
+      box-shadow:0 2px 6px rgba(255,215,0,0.2);
     }
-    .navbar .container { display: flex; justify-content: space-between; align-items: center; }
-    .navbar nav ul { list-style: none; display: flex; gap: 25px; margin:0; padding:0; }
-    .navbar nav a { color: #fff; font-weight: 600; }
-    .navbar nav a:hover { color: var(--primary-color); }
+    .navbar .container { display:flex; justify-content:space-between; align-items:center; width:90%; margin:auto; }
+    .navbar h2 { color: var(--primary); font-size:24px; }
+    .navbar nav ul { list-style:none; display:flex; gap:25px; }
+    .navbar nav a { font-weight:600; }
 
     /* Hero */
     .hero {
-      height: 90vh;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/1200/800?random=1') no-repeat center center;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
+      height:90vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero.jpg') no-repeat center center;
+      background-size:cover;
+      display:flex; justify-content:center; align-items:center; text-align:center;
     }
-    .hero h1 { font-size: 3rem; margin-bottom: 15px; }
-    .hero p { font-size: 1.3rem; margin-bottom: 20px; }
-    .btn {
-      background: var(--primary-color);
-      padding: 12px 30px;
-      color: var(--secondary-color);
-      font-weight: bold;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
+    .hero h1 { font-size:3rem; margin-bottom:15px; color: var(--primary); }
+    .hero p { font-size:1.3rem; margin-bottom:20px; }
+    .btn { background: var(--primary); color: var(--bg-dark); padding:12px 30px; border-radius:8px; font-weight:bold; transition:0.3s; }
     .btn:hover { background: var(--primary-hover); }
 
+    /* Sections */
+    section { padding:60px 0; width:90%; max-width:1200px; margin:auto; }
+
     /* About */
-    .about {
-      display: flex; flex-wrap: wrap; gap: 30px; align-items: center; padding: 60px 0;
-      background: var(--card-bg); border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
-    .about img { width: 100%; border-radius: 12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+    .about { display:flex; flex-wrap:wrap; gap:30px; align-items:center; }
+    .about img { width:100%; border-radius:12px; box-shadow:0 4px 15px rgba(255,215,0,0.2); }
     .about-text { flex:1; }
 
     /* Services */
-    .services { padding:60px 0; text-align:center; }
-    .services h2 { margin-bottom:40px; }
-    .services .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
-    .services .card { background: var(--card-bg); padding:25px; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.1); transition:0.3s; }
-    .services .card:hover { transform: translateY(-8px); }
+    .services h2 { color: var(--primary); margin-bottom:40px; text-align:center; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+    .card {
+      background: var(--card-bg); padding:25px; border-radius:12px;
+      box-shadow:0 6px 15px rgba(255,215,0,0.2); transition:0.3s; text-align:center;
+    }
+    .card:hover { transform: translateY(-8px); box-shadow:0 10px 20px rgba(255,215,0,0.4); }
+    .card h3 { color: var(--primary); margin-bottom:10px; }
 
     /* Works */
-    .works { padding:60px 0; text-align:center; }
-    .works .gallery { display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:15px; }
-    .works .gallery img { width:100%; border-radius:10px; transition:0.3s; }
-    .works .gallery img:hover { transform: scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
+    .works h2 { color: var(--primary); margin-bottom:40px; text-align:center; }
+    .works .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px; }
+    .works .gallery img { width:100%; border-radius:10px; transition:0.3s; cursor:pointer; }
+    .works .gallery img:hover { transform:scale(1.05); box-shadow:0 10px 20px rgba(255,215,0,0.4); }
 
     /* Contact */
-    .contact { background: var(--card-bg); padding:60px 0; text-align:center; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.05); }
-    .contact a { margin-top:15px; display:inline-block; }
+    .contact { background: var(--card-bg); padding:40px; border-radius:12px; text-align:center; box-shadow:0 6px 15px rgba(255,215,0,0.2); }
+    .contact a.btn { margin-top:15px; display:inline-block; }
 
     /* Footer */
-    footer { background: var(--secondary-color); color: var(--primary-color); text-align:center; padding:20px 0; margin-top:40px; }
+    footer { background: var(--bg-dark); color: var(--primary); text-align:center; padding:20px 0; margin-top:40px; }
+    .social-icons { margin-top:15px; display:flex; justify-content:center; gap:20px; }
+    .social-icons a { font-size:20px; color: var(--primary); }
+    .social-icons a:hover { color: var(--primary-hover); }
 
+    /* WhatsApp floating button */
+    .whatsapp-btn {
+      position:fixed; bottom:30px; right:30px; z-index:1000;
+      background: var(--primary); color: var(--bg-dark);
+      border-radius:50%; width:60px; height:60px; display:flex; justify-content:center; align-items:center;
+      font-size:30px; box-shadow:0 4px 15px rgba(255,215,0,0.3); transition:0.3s;
+    }
+    .whatsapp-btn:hover { background: var(--primary-hover); transform:scale(1.1); }
   </style>
 </head>
 <body>
@@ -105,8 +101,8 @@
       <nav>
         <ul>
           <li><a href="#about">من نحن</a></li>
-          <li><a href="#services">الخدمات</a></li>
-          <li><a href="#works">الأعمال</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#works">أعمالنا</a></li>
           <li><a href="#contact">تواصل</a></li>
         </ul>
       </nav>
@@ -116,54 +112,62 @@
   <!-- Hero -->
   <section class="hero">
     <div>
-      <h1>ميتـال بـرو – Metal Pro</h1>
-      <p>حدادة فرنجية وعامة – نصمم وننفذ بأعلى جودة</p>
+      <h1>ميتـال برو – Metal Pro</h1>
+      <p>حدادة فرنجية وعامة – نصنع الفخامة بأعلى جودة</p>
       <a href="#contact" class="btn">تواصل معنا</a>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="container about">
+  <section id="about" class="about">
     <div class="about-text">
       <h2>من نحن</h2>
-      <p>نحن فريق متخصص في أعمال الحدادة الفرنجية والعامة، نصنع الأبواب، الشبابيك، الدرابزينات، الهناكر، جلسات خارجية وغيرها من التصاميم حسب الطلب.</p>
+      <p>نحن متخصصون في أعمال الحدادة والفخامة، نصنع أبواب حديد مودرن، خيم قرميد فخمة، جلسات خارجية وهناكر بجودة لا تضاهى.</p>
     </div>
     <div class="about-img">
-      <img src="https://picsum.photos/500/350?random=2" alt="About us">
+      <img src="images/about.jpg" alt="عن ميتال برو">
     </div>
   </section>
 
   <!-- Services -->
-  <section id="services" class="services container">
+  <section id="services" class="services">
     <h2>خدماتنا</h2>
     <div class="grid">
-      <div class="card"><h3>أبواب وشبابيك</h3><p>تصاميم حديثة ومميزة</p></div>
-      <div class="card"><h3>جلسات خارجية</h3><p>بأفضل الخامات</p></div>
-      <div class="card"><h3>هناكر ومظلات</h3><p>مقاومة وعملية</p></div>
-      <div class="card"><h3>خزانات مياه</h3><p>بجميع الأحجام</p></div>
+      <div class="card"><h3>🚪 أبواب حديد مودرن</h3><p>تصاميم عصرية وفخمة</p></div>
+      <div class="card"><h3>🏠 خيم قرميد فخمة</h3><p>حسب الطلب وبجودة عالية</p></div>
+      <div class="card"><h3>🪜 سلالم وهناكر</h3><p>متينة وعملية</p></div>
+      <div class="card"><h3>🛢 خزانات مياه ومحروقات</h3><p>بجميع الأحجام</p></div>
     </div>
   </section>
 
   <!-- Works -->
-  <section id="works" class="works container">
+  <section id="works" class="works">
     <h2>أعمالنا</h2>
     <div class="gallery">
-      <img src="https://picsum.photos/400/300?random=3" alt="work1">
-      <img src="https://picsum.photos/400/300?random=4" alt="work2">
-      <img src="https://picsum.photos/400/300?random=5" alt="work3">
-      <img src="https://picsum.photos/400/300?random=6" alt="work4">
+      <img src="images/work1.jpg" alt="عمل 1">
+      <img src="images/work2.jpg" alt="عمل 2">
+      <img src="images/work3.jpg" alt="عمل 3">
+      <img src="images/work4.jpg" alt="عمل 4">
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="contact container">
+  <section id="contact" class="contact">
     <h2>تواصل معنا</h2>
     <p>📞 0936849441 – واتساب مباشر</p>
-    <p>📍 دير الزور – قرية خشام – طريق البصيرة</p>
+    <p>📍 دير الزور – قرية خشام – طريق البصيرة – محلات العزاوي</p>
     <a href="https://wa.me/963936849441" class="btn">تواصل واتساب</a>
-    <p>
+
+    <div class="social-icons">
+      <a href="https://www.facebook.com/share/19W8GLdFaQ/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/3alaadnan12" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@alaa4x4" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://youtube.com/@aax44" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <p style="margin-top:20px;">
       <a href="https://maps.app.goo.gl/qrwa9Kb1SBH34rNv6?g_st=ac" target="_blank" 
-         style="background:#b87333; color:#fff; padding:10px 20px; border-radius:8px; text-decoration:none; font-size:16px;">
+         style="background:#FFD700; color:#000; padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:bold;">
         📍 موقعنا على الخريطة
       </a>
     </p>
@@ -171,8 +175,13 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Metal Pro – جميع الحقوق محفوظة</p>
+    © 2025 Metal Pro – جميع الحقوق محفوظة
   </footer>
+
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/963936849441" target="_blank" class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
 </body>
 </html>
