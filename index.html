@@ -165,7 +165,15 @@ footer{background:#111;color:#fff;text-align:center;padding:20px 0;margin-top:40
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/script.js"></function sendWhatsApp() {
+  const name = document.getElementById('name').value;
+  const message = document.getElementById('message').value;
+  const fullMessage = `مرحباً، اسمي ${name}. ${message}`;
+  const whatsappNumber = "963936849441"; // الرقم الرئيسي
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(fullMessage)}`;
+  window.open(url, '_blank');
+  return false; // منع إعادة تحميل الصفحة
+}>
   <script>
     AOS.init();
   </script>
