@@ -5,222 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ميتال برو - Metal Pro</title>
   <style>
-    /* ألوان وهوية الموقع */
-    :root {
-      --main-bg: #000;
-      --card-bg: #111;
-      --gold: #FFD700;
-      --white: #fff;
-    }
-
     body {
       font-family: "Tahoma", Arial, sans-serif;
-      background: var(--main-bg);
-      color: var(--gold);
+      background: #000;
+      color: #fff;
       margin: 0;
       padding: 0;
       text-align: center;
     }
-
-    a {
-      color: var(--gold);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* الهيدر */
     header {
-      background: var(--card-bg);
+      background: #111;
       padding: 30px 20px;
-      border-bottom: 2px solid var(--gold);
-    }
-    header img {
-      max-width: 160px;
-      margin-bottom: 10px;
+      border-bottom: 3px solid #b87333;
     }
     header h1 {
       margin: 0;
       font-size: 34px;
-      color: var(--gold);
+      color: #b87333;
     }
-    header p {
-      margin: 5px 0 0;
-      font-size: 20px;
-      color: var(--white);
-    }
+    header p { color: #ccc; font-size: 18px; }
 
-    /* الأقسام */
-    section {
-      background: var(--card-bg);
+    /* Accordion */
+    .accordion {
       margin: 20px;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0px 3px 8px rgba(255, 215, 0, 0.4);
+      background: #111;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(184,115,51,0.4);
+    }
+    .accordion button {
+      background: #222;
+      color: #b87333;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
       text-align: right;
+      font-size: 20px;
+      transition: 0.3s;
     }
-    section h2 {
-      margin-top: 0;
-      border-bottom: 1px solid var(--gold);
-      display: inline-block;
-      padding-bottom: 5px;
-      font-size: 26px;
-      color: var(--gold);
-    }
-    section p {
-      color: var(--white);
-      font-size: 17px;
+    .accordion button:hover { background: #333; }
+    .accordion button.active { background: #b87333; color: #fff; }
+    .accordion .panel {
+      display: none;
+      background: #111;
+      padding: 15px;
+      color: #ddd;
+      text-align: right;
       line-height: 1.8;
     }
 
-    /* معرض الصور */
-    .gallery {
+    /* الخدمات Grid */
+    .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
       gap: 15px;
-      margin-top: 15px;
+      margin: 20px;
     }
-    .gallery img {
-      width: 100%;
+    .service-box {
+      background: #111;
+      padding: 20px;
+      border: 1px solid #b87333;
       border-radius: 8px;
-      box-shadow: 0px 3px 6px rgba(255,215,0,0.6);
-    }
-
-    /* أرقام التواصل */
-    .contact p {
-      font-size: 18px;
-      line-height: 2;
-      color: var(--white);
-    }
-
-    /* شبكات التواصل */
-    .social a {
-      display: inline-block;
-      margin: 8px 12px;
-      font-size: 18px;
-      color: var(--white);
       transition: 0.3s;
     }
-    .social a:hover {
-      color: var(--gold);
-      transform: scale(1.1);
-    }
-
-    /* زر واتساب عائم */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      left: 20px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .whatsapp-float:hover {
-      background-color: #20b954;
-    }
-
-    /* فوتر */
-    footer {
-      margin-top: 30px;
-      padding: 20px;
-      background: var(--card-bg);
-      border-top: 1px solid var(--gold);
-      font-size: 14px;
-      color: var(--white);
-    }
+    .service-box:hover { transform: translateY(-5px); background: #1a1a1a; }
+    .service-box h3 { color: #b87333; margin-top: 0; }
   </style>
 </head>
 <body>
 
-  <!-- الهيدر -->
-  <header>
-    <img src="logo.png" alt="شعار ميتال برو">
-    <h1>ميتـال بـرو – Metal Pro</h1>
-    <p>حدادة فرنجية وعامة – Steel Works</p>
-  </header>
+<header>
+  <h1>ميتال برو – Metal Pro</h1>
+  <p>حدادة فرنجية وعامة – Steel Works</p>
+</header>
 
-  <!-- من نحن -->
-  <section>
-    <h2>من نحن</h2>
+<!-- Accordion: من نحن -->
+<div class="accordion">
+  <button onclick="togglePanel(this)">من نحن</button>
+  <div class="panel">
     <p>
-      نحن في <b>ميتال برو</b> نضع خبرتنا الطويلة في مجال الحدادة بين يديك، لنحوّل الحديد من مجرد معدن صلب إلى لمسة جمالية تضيف القوة والفخامة لمكانك.  
-      نؤمن أن التصميم المتقن هو سر التميز، لذلك نهتم بأدق التفاصيل في صناعة الأبواب، الشبابيك، الدرابزينات، الخزانات، والسلالم الداخلية والخارجية.  
-      هدفنا تقديم حلول عصرية تجمع بين <span style="color: var(--gold);">الجودة والمتانة والأناقة</span> بما يتناسب مع جميع الأذواق.
+      نحن في <b>ميتال برو</b> نحول الحديد إلى فن وإبداع، بخبرة عالية في تصنيع الأبواب،
+      الشبابيك، الدرابزينات، الخزانات والسلالم.  
+      نلتزم بالدقة، القوة، والأناقة لنقدم لك حلولًا عصرية ومتينة.
     </p>
-  </section>
+  </div>
+</div>
 
-  <!-- خدماتنا -->
-  <section>
-    <h2>خدماتنا</h2>
-    <p>
-      ✅ أبواب حديد عصرية بموديلات حديثة.<br>
-      ✅ شبابيك وحمايات بأعلى معايير الأمان.<br>
-      ✅ خزانات مياه ومحروقات بكافة الأحجام.<br>
-      ✅ سلالم داخلية وخارجية بأسلوب هندسي أنيق.<br>
-      ✅ درابزينات بتصاميم كلاسيكية وعصرية.<br>
-      ✅ خيم القرميد وجميع أنواع الخيم حسب الطلب.<br>
-      ✅ هنكارات صناعية وصناديق ودفاعات سيارات.<br>
-      ✅ طاولات وكراسي حديدية مخصصة للمطاعم والمقاهي.<br>
-      ✅ تجهيز ديكورات محلات ألبسة ومختلف المشاريع.
-    </p>
-  </section>
-
-  <!-- العنوان -->
-  <section>
-    <h2>📍 عنوان المحل</h2>
-    <p>
-      دير الزور / طريق البصيرة / قرية خشام جانب ثانوية خشام / محلات العزاوي للحدادة الفرنجية
-    </p>
-    <p><a href="https://maps.app.goo.gl/SwYpJ916rMkYRutz7?g_st=ac" target="_blank">فتح الموقع على خرائط جوجل</a></p>
-  </section>
-
-  <!-- أرقام التواصل -->
-  <section>
-    <h2>📞 أرقام التواصل</h2>
-    <div class="contact">
-      <p>المعلم لؤي: <a href="https://wa.me/963936849441" target="_blank">+963 936 849 441 (واتساب)</a></p>
-      <p>المعلم علاء: <a href="https://wa.me/963968075166" target="_blank">+963 968 075 166 (واتساب)</a></p>
+<!-- Accordion: خدماتنا -->
+<div class="accordion">
+  <button onclick="togglePanel(this)">خدماتنا</button>
+  <div class="panel">
+    <div class="services">
+      <div class="service-box"><h3>🚪 أبواب حديد</h3><p>تصاميم حديثة وعصرية متينة.</p></div>
+      <div class="service-box"><h3>🔒 شبابيك وحمايات</h3><p>أمان وجمال في آن واحد.</p></div>
+      <div class="service-box"><h3>🛢 خزانات</h3><p>مياه ومحروقات بجميع الأحجام.</p></div>
+      <div class="service-box"><h3>🪜 سلالم</h3><p>داخلية وخارجية بأسلوب هندسي.</p></div>
+      <div class="service-box"><h3>🏠 خيم قرميد</h3><p>حسب الطلب وكافة الأنواع.</p></div>
+      <div class="service-box"><h3>🏗 هنكارات</h3><p>صناعية وخدمات سيارات متكاملة.</p></div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- صفحات التواصل -->
-  <section>
-    <h2>🌐 صفحات التواصل</h2>
-    <div class="social">
-      <a href="https://www.facebook.com/share/19W8GLdFaQ/" target="_blank">📘 فيسبوك</a>
-      <a href="https://youtube.com/@aax44" target="_blank">▶️ يوتيوب</a>
-      <a href="https://www.instagram.com/3alaadnan12" target="_blank">📷 إنستغرام</a>
-      <a href="https://www.tiktok.com/@alaa4x4" target="_blank">🎵 تيك توك</a>
-    </div>
-  </section>
-
-  <!-- معرض الأعمال -->
-  <section>
-    <h2>🖼️ معرض أعمالنا</h2>
-    <div class="gallery">
-      <img src="images/work1.jpg" alt="عمل 1">
-      <img src="images/work2.jpg" alt="عمل 2">
-      <img src="images/work3.jpg" alt="عمل 3">
-    </div>
-  </section>
-
-  <!-- زر واتساب عائم -->
-  <a href="https://wa.me/963936849441" class="whatsapp-float" target="_blank">💬</a>
-
-  <!-- الفوتر -->
-  <footer>
-    © جميع الحقوق محفوظة – ميتال برو 2025
-  </footer>
+<script>
+function togglePanel(btn) {
+  btn.classList.toggle("active");
+  let panel = btn.nextElementSibling;
+  if (panel.style.display === "block") {
+    panel.style.display = "none";
+  } else {
+    panel.style.display = "block";
+  }
+}
+</script>
 
 </body>
 </html>
