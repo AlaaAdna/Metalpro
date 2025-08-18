@@ -3,425 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Metal Pro – ميتال برو</title>
-  <link rel="stylesheet" href="css/style.css"/* ===== الخطوط والألوان ===== */
-body {
-  margin: 0;
-  font-family: 'Tajawal', sans-serif;
-  line-height: 1.8;
-  color: #111;              /* نص أساسي داكن */
-  background: #f5f5f5;      /* خلفية فاتحة لطيفة */
-}
+  <title>ميتـال بـرو – Metal Pro</title>
+  <style>
+    :root {
+      --primary-color: #f4b400;  /* ذهبي */
+      --primary-hover: #ffca28;
+      --secondary-color: #111;   /* أسود داكن */
+      --light-bg: #f5f5f5;
+      --text-color: #222;
+      --card-bg: #fff;
+    }
 
-/* العناوين */
-h1, h2, h3 {
-  margin: 0 0 15px;
-  font-weight: 700;
-  color: #111;              /* عناوين داكنة */
-}
+    body {
+      margin: 0;
+      font-family: 'Tajawal', sans-serif;
+      line-height: 1.8;
+      color: var(--text-color);
+      background: var(--light-bg);
+    }
 
-/* الروابط */
-a {
-  text-decoration: none;
-  color: #111;
-  transition: 0.3s;
-}
+    h1, h2, h3 { margin: 0 0 15px; font-weight:700; color: var(--secondary-color); }
+    a { text-decoration: none; color: var(--secondary-color); transition: 0.3s; }
+    a:hover { color: var(--primary-color); }
+    .container { width: 90%; max-width: 1200px; margin: auto; }
 
-a:hover {
-  color: #f4b400;           /* ذهبي عند التحويم */
-}
+    /* Navbar */
+    .navbar {
+      background: var(--secondary-color);
+      color: #fff;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+    .navbar nav ul { list-style: none; display: flex; gap: 25px; margin:0; padding:0; }
+    .navbar nav a { color: #fff; font-weight: 600; }
+    .navbar nav a:hover { color: var(--primary-color); }
 
-/* الحاويات */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
+    /* Hero */
+    .hero {
+      height: 90vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/1200/800?random=1') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero h1 { font-size: 3rem; margin-bottom: 15px; }
+    .hero p { font-size: 1.3rem; margin-bottom: 20px; }
+    .btn {
+      background: var(--primary-color);
+      padding: 12px 30px;
+      color: var(--secondary-color);
+      font-weight: bold;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .btn:hover { background: var(--primary-hover); }
 
-/* ===== Navbar ===== */
-.navbar {
-  background: #111;          /* أسود داكن */
-  color: #fff;
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
+    /* About */
+    .about {
+      display: flex; flex-wrap: wrap; gap: 30px; align-items: center; padding: 60px 0;
+      background: var(--card-bg); border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .about img { width: 100%; border-radius: 12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+    .about-text { flex:1; }
 
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    /* Services */
+    .services { padding:60px 0; text-align:center; }
+    .services h2 { margin-bottom:40px; }
+    .services .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+    .services .card { background: var(--card-bg); padding:25px; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.1); transition:0.3s; }
+    .services .card:hover { transform: translateY(-8px); }
 
-.logo {
-  height: 50px;
-}
+    /* Works */
+    .works { padding:60px 0; text-align:center; }
+    .works .gallery { display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:15px; }
+    .works .gallery img { width:100%; border-radius:10px; transition:0.3s; }
+    .works .gallery img:hover { transform: scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
 
-.navbar nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
+    /* Contact */
+    .contact { background: var(--card-bg); padding:60px 0; text-align:center; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.05); }
+    .contact a { margin-top:15px; display:inline-block; }
 
-.navbar nav a {
-  color: #fff;
-  font-weight: 600;
-}
+    /* Footer */
+    footer { background: var(--secondary-color); color: var(--primary-color); text-align:center; padding:20px 0; margin-top:40px; }
 
-.navbar nav a:hover {
-  color: #f4b400;
-}
-
-/* ===== Hero ===== */
-.hero {
-  height: 90vh;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero.jpg') no-repeat center center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-}
-
-.btn {
-  background: #f4b400;      /* زر ذهبي */
-  padding: 12px 30px;
-  color: #111;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #ffca28;      /* ذهب أفتح عند Hover */
-}
-
-/* ===== About ===== */
-.about {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  align-items: center;
-  padding: 60px 0;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.about-img img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.about-text {
-  flex: 1;
-}
-
-/* ===== Services ===== */
-.services {
-  padding: 60px 0;
-  text-align: center;
-}
-
-.services h2 {
-  margin-bottom: 40px;
-  color: #111;
-}
-
-.services .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.services .card {
-  background: #fefefe;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-
-.services .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-/* ===== Works ===== */
-.works {
-  padding: 60px 0;
-  text-align: center;
-}
-
-.works .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-
-.works .gallery img {
-  width: 100%;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.works .gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* ===== Testimonials ===== */
-.testimonials {
-  background: #f9f9f9;
-  padding: 60px 0;
-  text-align: center;
-}
-
-.testimonials .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-
-.testimonials .card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-
-.testimonials .card:hover {
-  transform: translateY(-5px);
-}
-
-/* ===== Contact ===== */
-.contact {
-  background: #fff;
-  padding: 60px 0;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
-}
-
-.contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
-  margin: auto;
-}
-
-.contact input, .contact textarea {
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.contact textarea {
-  min-height: 120px;
-  resize: none;
-}
-
-/* ===== Footer ===== */
-footer {
-  background: #111;
-  color: #f4b400;     /* نص ذهبي */
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-}body {
-  margin: 0;
-  font-family: 'Tajawal', sans-serif;
-  line-height: 1.8;
-  color: #333;
-  background: #fafafa;
-}
-h1,h2,h3{margin:0 0 15px;font-weight:700;}
-a{text-decoration:none;color:inherit;}
-.container{width:90%;max-width:1200px;margin:auto;}
-.navbar{background:#111;color:#fff;padding:15px 0;position:sticky;top:0;z-index:1000;}
-.navbar .container{display:flex;justify-content:space-between;align-items:center;}
-.logo{height:50px;}
-.navbar nav ul{list-style:none;display:flex;gap:20px;}
-.navbar nav a{color:#fff;font-weight:600;transition:.3s;}
-.navbar nav a:hover{color:#f4b400;}
-.hero{height:100vh;background-size:cover;background-position:center;position:relative;display:flex;justify-content:center;align-items:center;text-align:center;color:#fff;}
-.hero .overlay{position:absolute;inset:0;background:rgba(0,0,0,.6);}
-.hero-content{position:relative;z-index:1;}
-.hero h1{font-size:3rem;margin-bottom:15px;}
-.hero p{font-size:1.2rem;margin-bottom:20px;}
-.btn{background:#f4b400;padding:12px 25px;color:#111;font-weight:bold;border-radius:8px;transition:.3s;}
-.btn:hover{background:#ffca28;}
-.about{display:flex;gap:30px;align-items:center;padding:60px 0;}
-.about-img img{width:100%;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.1);}
-.about-text{flex:1;}
-.services{background:#fff;padding:60px 0;text-align:center;}
-.services h2{margin-bottom:40px;}
-.services .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
-.services .card{background:#fafafa;padding:25px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.1);transition:.3s;}
-.services .card:hover{transform:translateY(-8px);}
-.works{padding:60px 0;text-align:center;}
-.works .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;}
-.works .gallery img{width:100%;border-radius:10px;transition:.3s;}
-.works .gallery img:hover{transform:scale(1.05);}
-.testimonials{background:#f9f9f9;padding:60px 0;text-align:center;}
-.testimonials .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}
-.testimonials .card{background:#fff;padding:25px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.1);}
-.contact{background:#fff;padding:60px 0;text-align:center;}
-.contact form{display:flex;flex-direction:column;gap:15px;max-width:500px;margin:auto;}
-.contact input,.contact textarea{padding:12px;border:1px solid #ddd;border-radius:8px;font-size:1rem;}
-.contact textarea{min-height:120px;resize:none;}
-footer{background:#111;color:#fff;text-align:center;padding:20px 0;margin-top:40px;}>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  </style>
 </head>
 <body>
+
+  <!-- Navbar -->
   <header class="navbar">
     <div class="container">
-      <img src="images/logo.png" alt="Metal Pro" class="logo">
+      <h2>Metal Pro</h2>
       <nav>
         <ul>
-          <li><a href="#home">الرئيسية</a></li>
           <li><a href="#about">من نحن</a></li>
-          <li><a href="#services">خدماتنا</a></li>
-          <li><a href="#works">أعمالنا</a></li>
-          <li><a href="#testimonials">آراء العملاء</a></li>
-          <li><a href="#contact">تواصل معنا</a></li>
+          <li><a href="#services">الخدمات</a></li>
+          <li><a href="#works">الأعمال</a></li>
+          <li><a href="#contact">تواصل</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section id="home" class="hero" style="background-image: url('images/hero.jpg');">
-    <div class="overlay"></div>
-    <div class="hero-content" data-aos="fade-up">
+  <!-- Hero -->
+  <section class="hero">
+    <div>
       <h1>ميتـال بـرو – Metal Pro</h1>
-      <p>حدادة فرنجية وعامة – جودة عالمية في دير الزور</p>
-      <a href="#contact" class="btn">اطلب عرض سعر الآن</a>
+      <p>حدادة فرنجية وعامة – نصمم وننفذ بأعلى جودة</p>
+      <a href="#contact" class="btn">تواصل معنا</a>
     </div>
   </section>
 
-  <section id="about" class="about container">
-    <div class="about-img" data-aos="fade-left">
-      <img src="images/about.jpg" alt="عن الشركة">
-    </div>
-    <div class="about-text" data-aos="fade-right">
+  <!-- About -->
+  <section id="about" class="container about">
+    <div class="about-text">
       <h2>من نحن</h2>
-      <p>
-        ميتال برو شركة متخصصة في صناعة الأبواب، الشبابيك، الخزانات، الهناكر،
-        والجلسات الخارجية. نستخدم أحدث التقنيات لتقديم منتجات عالية الجودة
-        تنافس الشركات العالمية.
-      </p>
+      <p>نحن فريق متخصص في أعمال الحدادة الفرنجية والعامة، نصنع الأبواب، الشبابيك، الدرابزينات، الهناكر، جلسات خارجية وغيرها من التصاميم حسب الطلب.</p>
+    </div>
+    <div class="about-img">
+      <img src="https://picsum.photos/500/350?random=2" alt="About us">
     </div>
   </section>
 
-  <section id="services" class="services">
-    <div class="container">
-      <h2 data-aos="fade-up">خدماتنا</h2>
-      <div class="grid">
-        <div class="card" data-aos="zoom-in">
-          <h3>أبواب وشبابيك</h3>
-          <p>تصميم وتنفيذ الأبواب والشبابيك الحديدية الحديثة.</p>
-        </div>
-        <div class="card" data-aos="zoom-in">
-          <h3>خزانات مياه</h3>
-          <p>خزانات مياه بجميع الأحجام مع جودة ومتانة عالية.</p>
-        </div>
-        <div class="card" data-aos="zoom-in">
-          <h3>جلسات خارجية</h3>
-          <p>تصاميم مبتكرة للجلسات وحدائق القرميد.</p>
-        </div>
-        <div class="card" data-aos="zoom-in">
-          <h3>هناكر ومواقف</h3>
-          <p>بناء هناكر ومواقف سيارات بطرق هندسية احترافية.</p>
-        </div>
-      </div>
+  <!-- Services -->
+  <section id="services" class="services container">
+    <h2>خدماتنا</h2>
+    <div class="grid">
+      <div class="card"><h3>أبواب وشبابيك</h3><p>تصاميم حديثة ومميزة</p></div>
+      <div class="card"><h3>جلسات خارجية</h3><p>بأفضل الخامات</p></div>
+      <div class="card"><h3>هناكر ومظلات</h3><p>مقاومة وعملية</p></div>
+      <div class="card"><h3>خزانات مياه</h3><p>بجميع الأحجام</p></div>
     </div>
   </section>
 
+  <!-- Works -->
   <section id="works" class="works container">
-    <h2 data-aos="fade-up">أعمالنا</h2>
+    <h2>أعمالنا</h2>
     <div class="gallery">
-      <img src="images/work1.jpg" alt="عمل 1" data-aos="fade-up">
-      <img src="images/work2.jpg" alt="عمل 2" data-aos="fade-up">
-      <img src="images/work3.jpg" alt="عمل 3" data-aos="fade-up">
-      <img src="images/work4.jpg" alt="عمل 4" data-aos="fade-up">
-      <img src="images/work5.jpg" alt="عمل 5" data-aos="fade-up">
-      <img src="images/work6.jpg" alt="عمل 6" data-aos="fade-up">
+      <img src="https://picsum.photos/400/300?random=3" alt="work1">
+      <img src="https://picsum.photos/400/300?random=4" alt="work2">
+      <img src="https://picsum.photos/400/300?random=5" alt="work3">
+      <img src="https://picsum.photos/400/300?random=6" alt="work4">
     </div>
   </section>
 
-  <section id="testimonials" class="testimonials">
-    <div class="container">
-      <h2 data-aos="fade-up">آراء العملاء</h2>
-      <div class="grid">
-        <div class="card" data-aos="fade-right">
-          <p>“خدمة ممتازة وجودة عالية جدًا. شكراً ميتال برو.”</p>
-          <span>- أحمد، دير الزور</span>
-        </div>
-        <div class="card" data-aos="fade-up">
-          <p>“التصاميم عصرية والتنفيذ احترافي، أنصح بهم بشدة.”</p>
-          <span>- محمد، البصيرة</span>
-        </div>
-        <div class="card" data-aos="fade-left">
-          <p>“التزام بالمواعيد ودقة في التفاصيل. رائعون.”</p>
-          <span>- علاء، خشام</span>
-        </div>
-      </div>
-    </div>
+  <!-- Contact -->
+  <section id="contact" class="contact container">
+    <h2>تواصل معنا</h2>
+    <p>📞 0936849441 – واتساب مباشر</p>
+    <p>📍 دير الزور – قرية خشام – طريق البصيرة</p>
+    <a href="https://wa.me/963936849441" class="btn">تواصل واتساب</a>
+    <p>
+      <a href="https://maps.app.goo.gl/qrwa9Kb1SBH34rNv6?g_st=ac" target="_blank" 
+         style="background:#b87333; color:#fff; padding:10px 20px; border-radius:8px; text-decoration:none; font-size:16px;">
+        📍 موقعنا على الخريطة
+      </a>
+    </p>
   </section>
 
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2 data-aos="fade-up">تواصل معنا</h2>
-      <p>📍 دير الزور – قرية خشام – طريق البصيرة – جانب ثانوية خشام – محلات العزاوي</p>
-      <p>📞 واتساب: <a href="https://wa.me/963936849441" target="_blank">+963 936 849 441</a> | <a href="https://wa.me/963968075166" target="_blank">+963 968 075 166</a></p>
-
-      <form onsubmit="return sendWhatsApp()" data-aos="fade-up">
-        <input type="text" id="name" placeholder="الاسم" required>
-        <textarea id="message" placeholder="تفاصيل الطلب" required></textarea>
-        <button type="submit" class="btn">إرسال عبر واتساب</button>
-      </form>
-    </div>
-  </section>
-
+  <!-- Footer -->
   <footer>
     <p>© 2025 Metal Pro – جميع الحقوق محفوظة</p>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/script.js"></function sendWhatsApp() {
-  const name = document.getElementById('name').value;
-  const message = document.getElementById('message').value;
-  const fullMessage = `مرحباً، اسمي ${name}. ${message}`;
-  const whatsappNumber = "963936849441"; // الرقم الرئيسي
-  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(fullMessage)}`;
-  window.open(url, '_blank');
-  return false; // منع إعادة تحميل الصفحة
-}>
-  <script>
-    AOS.init();
-  </script>
 </body>
 </html>
