@@ -4,7 +4,253 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Metal Pro – ميتال برو</title>
-  <link rel="stylesheet" href="css/style.css"body {
+  <link rel="stylesheet" href="css/style.css"/* ===== الخطوط والألوان ===== */
+body {
+  margin: 0;
+  font-family: 'Tajawal', sans-serif;
+  line-height: 1.8;
+  color: #111;              /* نص أساسي داكن */
+  background: #f5f5f5;      /* خلفية فاتحة لطيفة */
+}
+
+/* العناوين */
+h1, h2, h3 {
+  margin: 0 0 15px;
+  font-weight: 700;
+  color: #111;              /* عناوين داكنة */
+}
+
+/* الروابط */
+a {
+  text-decoration: none;
+  color: #111;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #f4b400;           /* ذهبي عند التحويم */
+}
+
+/* الحاويات */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: #111;          /* أسود داكن */
+  color: #fff;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar nav a {
+  color: #fff;
+  font-weight: 600;
+}
+
+.navbar nav a:hover {
+  color: #f4b400;
+}
+
+/* ===== Hero ===== */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #f4b400;      /* زر ذهبي */
+  padding: 12px 30px;
+  color: #111;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ffca28;      /* ذهب أفتح عند Hover */
+}
+
+/* ===== About ===== */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  padding: 60px 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.about-img img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  flex: 1;
+}
+
+/* ===== Services ===== */
+.services {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.services h2 {
+  margin-bottom: 40px;
+  color: #111;
+}
+
+.services .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.services .card {
+  background: #fefefe;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.services .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== Works ===== */
+.works {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.works .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.works .gallery img {
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.works .gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== Testimonials ===== */
+.testimonials {
+  background: #f9f9f9;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.testimonials .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.testimonials .card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.testimonials .card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== Contact ===== */
+.contact {
+  background: #fff;
+  padding: 60px 0;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact input, .contact textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #111;
+  color: #f4b400;     /* نص ذهبي */
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}body {
   margin: 0;
   font-family: 'Tajawal', sans-serif;
   line-height: 1.8;
