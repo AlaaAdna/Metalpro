@@ -1,191 +1,207 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ميتـال برو – Metal Pro</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ميتال برو - Metal Pro</title>
+  <style>
+    /* الخطوط والألوان */
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: #000; /* أسود */
+      color: #C9A646;   /* ذهبي */
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      direction: rtl;
+    }
+    a {
+      color: #FFD700;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
 
-<style>
-:root {
-  --primary: #FFD700;
-  --primary-hover: #fff176;
-  --bg-dark: #000;
-  --text-light: #FFD700;
-  --text-white: #fff;
-  --card-bg: #111;
-}
+    /* الهيدر */
+    header {
+      background: #111;
+      padding: 20px;
+    }
+    header img {
+      max-width: 160px;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 34px;
+      color: #FFD700;
+    }
+    header p {
+      margin: 5px 0 0 0;
+      font-size: 18px;
+      color: #C9A646;
+    }
 
-/* Reset */
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Tajawal', sans-serif; }
-body { background: var(--bg-dark); color: var(--text-light); line-height:1.8; scroll-behavior:smooth; }
+    /* الأقسام */
+    section {
+      background: #111;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 2px 6px rgba(201,166,70,0.5);
+    }
+    section h2 {
+      margin-top: 0;
+      border-bottom: 1px solid #FFD700;
+      display: inline-block;
+      padding-bottom: 5px;
+      font-size: 24px;
+      color: #FFD700;
+    }
 
-/* Navbar */
-.navbar {
-  position: sticky; top:0; z-index:1000;
-  backdrop-filter: blur(8px);
-  background: rgba(0,0,0,0.7);
-  padding:15px 0;
-}
-.navbar .container { display:flex; justify-content:space-between; align-items:center; width:90%; margin:auto; }
-.navbar h2 { color: var(--primary); font-size:26px; font-weight:bold; }
-.navbar nav ul { list-style:none; display:flex; gap:25px; }
-.navbar nav a { color: var(--text-white); font-weight:600; transition:0.3s; }
-.navbar nav a:hover { color: var(--primary-hover); }
+    /* معرض الصور */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0px 2px 5px rgba(201,166,70,0.5);
+    }
 
-/* Hero */
-.hero {
-  height:90vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero.jpg') no-repeat center center;
-  background-size:cover;
-  display:flex; justify-content:center; align-items:center; text-align:center; padding:0 20px;
-}
-.hero h1 { font-size:3rem; margin-bottom:15px; color: var(--primary); }
-.hero p { font-size:1.3rem; margin-bottom:25px; color: var(--text-white); }
-.btn { background: var(--primary); color: var(--bg-dark); padding:14px 35px; border-radius:8px; font-weight:bold; transition:0.3s; }
-.btn:hover { background: var(--primary-hover); }
+    /* أرقام التواصل */
+    .contact {
+      font-size: 18px;
+      line-height: 2;
+    }
 
-/* About */
-.about { display:flex; flex-wrap:wrap; gap:30px; align-items:center; padding:60px 0; width:90%; max-width:1200px; margin:auto; }
-.about img { width:100%; border-radius:12px; box-shadow:0 6px 20px rgba(255,215,0,0.3); }
-.about-text { flex:1; }
-.about-text h2 { color: var(--primary); font-size:28px; margin-bottom:15px; }
-.about-text p { color: var(--text-white); font-size:18px; line-height:1.6; }
+    /* أزرار الشبكات */
+    .social a {
+      display: inline-block;
+      margin: 5px 10px;
+      font-size: 18px;
+    }
 
-/* Services */
-.services { padding:60px 0; width:90%; max-width:1200px; margin:auto; }
-.services h2 { color: var(--primary); margin-bottom:40px; text-align:center; font-size:30px; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
-.card {
-  background: var(--card-bg); padding:25px; border-radius:12px; box-shadow:0 6px 15px rgba(255,215,0,0.2); text-align:center; transition:0.3s;
-}
-.card:hover { transform: translateY(-10px); box-shadow:0 10px 25px rgba(255,215,0,0.4); }
-.card h3 { color: var(--primary); margin-bottom:10px; font-size:20px; }
-.card p { color: var(--text-white); font-size:16px; }
+    /* زر واتساب عائم */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #C9A646;
+      color: #000;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 32px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+      z-index: 100;
+    }
+    .whatsapp-float i {
+      margin-top: 14px;
+    }
 
-/* Works */
-.works { padding:60px 0; width:90%; max-width:1200px; margin:auto; }
-.works h2 { color: var(--primary); margin-bottom:40px; text-align:center; font-size:30px; }
-.gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px; }
-.gallery img { width:100%; border-radius:12px; cursor:pointer; transition: transform 0.3s, box-shadow 0.3s; }
-.gallery img:hover { transform: scale(1.05); box-shadow:0 12px 25px rgba(255,215,0,0.4); }
-
-/* Contact */
-.contact { background: var(--card-bg); padding:50px 20px; border-radius:12px; text-align:center; box-shadow:0 6px 15px rgba(255,215,0,0.2); width:90%; max-width:700px; margin:60px auto; }
-.contact h2 { color: var(--primary); margin-bottom:20px; font-size:28px; }
-.contact p { color: var(--text-white); font-size:16px; margin-bottom:10px; }
-.contact a.btn { margin-top:15px; display:inline-block; }
-
-/* Social Icons */
-.social-icons { margin-top:25px; display:flex; justify-content:center; gap:20px; }
-.social-icons a i { font-size:22px; transition: transform 0.3s; }
-.social-icons a:hover i { transform: scale(1.2); }
-
-/* Footer */
-footer { background: var(--bg-dark); color: var(--primary); text-align:center; padding:25px 0; margin-top:40px; font-size:14px; }
-
-/* WhatsApp floating button */
-.whatsapp-btn {
-  position:fixed; bottom:30px; right:30px; z-index:9999;
-  background: #25D366; color:#fff;
-  border-radius:50%; width:60px; height:60px; display:flex; justify-content:center; align-items:center;
-  font-size:30px; box-shadow:0 6px 20px rgba(0,0,0,0.4); transition:0.3s;
-}
-.whatsapp-btn:hover { transform: scale(1.1); }
-
-/* Responsive */
-@media (max-width:768px){
-  .hero h1 { font-size:2rem; }
-  .hero p { font-size:1rem; }
-  .btn { padding:10px 20px; }
-  .navbar nav ul { flex-direction:column; gap:15px; }
-  .about { flex-direction:column; }
-}
-</style>
+    /* الفوتر */
+    footer {
+      margin-top: 20px;
+      padding: 15px;
+      background: #111;
+      border-top: 1px solid #FFD700;
+      font-size: 14px;
+      color: #C9A646;
+    }
+  </style>
+  <!-- أيقونات واتساب -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<!-- Navbar -->
-<header class="navbar">
-  <div class="container">
-    <h2>Metal Pro</h2>
-    <nav>
-      <ul>
-        <li><a href="#about">من نحن</a></li>
-        <li><a href="#services">خدماتنا</a></li>
-        <li><a href="#works">أعمالنا</a></li>
-        <li><a href="#contact">تواصل</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <!-- الهيدر -->
+  <header>
+    <img src="logo.jpg" alt="شعار ميتال برو">
+    <h1>ميتـال بـرو – Metal Pro</h1>
+    <p>حدادة فرنجية وعامة – Steel Works</p>
+  </header>
 
-<!-- Hero -->
-<section class="hero">
-  <div>
-    <h1>ميتـال برو – Metal Pro</h1>
-    <p>حدادة فرنجية وعامة – نصنع الفخامة بأعلى جودة</p>
-    <a href="#contact" class="btn">تواصل معنا</a>
-  </div>
-</section>
-
-<!-- About -->
-<section id="about" class="about">
-  <div class="about-text">
+  <!-- من نحن -->
+  <section>
     <h2>من نحن</h2>
-    <p>نحن متخصصون في أعمال الحدادة والفخامة، نصنع أبواب حديد مودرن، خيم قرميد فخمة، جلسات خارجية وهناكر بجودة لا تضاهى.</p>
-  </div>
-  <div class="about-img">
-    <img src="images/about.jpg" alt="عن ميتال برو" loading="lazy">
-  </div>
-</section>
+    <p>
+      نحن شركة حدادة ميتال برو نقوم بكافة أعمال الحديد بخبرة عالية وإتقان، 
+      ونسعى لتقديم أجمل التصاميم العصرية للأبواب، الشبابيك، الدرابزينات، 
+      الخزانات، والسلالم الداخلية والخارجية بجودة مميزة.
+    </p>
+  </section>
 
-<!-- Services -->
-<section id="services" class="services">
-  <h2>خدماتنا</h2>
-  <div class="grid">
-    <div class="card"><h3>🚪 أبواب حديد مودرن</h3><p>تصاميم عصرية وفخمة</p></div>
-    <div class="card"><h3>🏠 خيم قرميد فخمة</h3><p>حسب الطلب وبجودة عالية</p></div>
-    <div class="card"><h3>🪜 سلالم وهناكر</h3><p>متينة وعملية</p></div>
-    <div class="card"><h3>🛢 خزانات مياه ومحروقات</h3><p>بجميع الأحجام</p></div>
-  </div>
-</section>
+  <!-- خدماتنا -->
+  <section>
+    <h2>خدماتنا</h2>
+    <p>
+      - تصنيع أبواب الحديد بأحدث الموديلات العصرية.<br>
+      - الشبابيك والحمايات الحديدية.<br>
+      - تصنيع خزانات المياه والمحروقات بكافة الأحجام.<br>
+      - تصنيع السلالم الداخلية والخارجية بطرق عصرية.<br>
+      - تصنيع جميع موديلات الدرابزينات.<br>
+      - خيم القرميد وكافة أنواع الخيم حسب الطلب.<br>
+      - تصنيع الهنكارات الصناعية وصناديق ودفاعات سيارات.<br>
+      - جميع أعمال الديكور في الحديد (طاولات، كراسي للمطاعم، ديكور محلات).<br>
+      - جميع أعمال الحديد حسب الطلب.
+    </p>
+  </section>
 
-<!-- Works -->
-<section id="works" class="works">
-  <h2>أعمالنا</h2>
-  <div class="gallery">
-    <img src="images/work1.jpg" alt="عمل 1" loading="lazy">
-    <img src="images/work2.jpg" alt="عمل 2" loading="lazy">
-    <img src="images/work3.jpg" alt="عمل 3" loading="lazy">
-    <img src="images/work4.jpg" alt="عمل 4" loading="lazy">
-  </div>
-</section>
+  <!-- العنوان -->
+  <section>
+    <h2>📍 عنوان المحل</h2>
+    <p>
+      دير الزور / طريق البصيرة / قرية خشام جانب ثانوية خشام / محلات العزاوي للحدادة الفرنجية
+    </p>
+    <p><a href="https://maps.app.goo.gl/SwYpJ916rMkYRutz7?g_st=ac" target="_blank">فتح على خرائط جوجل</a></p>
+  </section>
 
-<!-- Contact -->
-<section id="contact" class="contact">
-  <h2>تواصل معنا</h2>
-  <p>📞 0936849441 – واتساب مباشر</p>
-  <p>📍 دير الزور – قرية خشام – طريق البصيرة – محلات العزاوي</p>
-  <a href="https://wa.me/963936849441" class="btn">تواصل واتساب</a>
+  <!-- أرقام التواصل -->
+  <section>
+    <h2>📞 أرقام التواصل</h2>
+    <div class="contact">
+      <p>المعلم لؤي: <a href="https://wa.me/963936849441" target="_blank">+963 936 849 441</a></p>
+      <p>المعلم علاء: <a href="https://wa.me/963968075166" target="_blank">+963 968 075 166</a></p>
+    </div>
+  </section>
 
-  <div class="social-icons">
-    <a href="https://www.facebook.com/share/19W8GLdFaQ/" target="_blank"><i class="fab fa-facebook-f" style="color:#1877F2;"></i></a>
-    <a href="https://www.instagram.com/3alaadnan12" target="_blank"><i class="fab fa-instagram" style="color:#E4405F;"></i></a>
-    <a href="https://www.tiktok.com/@alaa4x4" target="_blank"><i class="fab fa-tiktok" style="color:#000;"></i></a>
-    <a href="https://youtube.com/@aax44" target="_blank"><i class="fab fa-youtube" style="color:#FF0000;"></i></a>
-  </div>
-</section>
+  <!-- صفحات التواصل -->
+  <section>
+    <h2>🌐 صفحات التواصل</h2>
+    <div class="social">
+      <a href="https://www.facebook.com/share/19W8GLdFaQ/" target="_blank">📘 فيسبوك</a>
+      <a href="https://youtube.com/@aax44?si=1ZB5i6OWpBUw-ueP" target="_blank">▶️ يوتيوب</a>
+      <a href="https://www.instagram.com/3alaadnan12?igsh=aXB3MGJyczJsemFl" target="_blank">📷 إنستغرام</a>
+      <a href="https://www.tiktok.com/@alaa4x4?_t=ZS-8yxXSQ7RxDU&_r=1" target="_blank">🎵 تيك توك</a>
+    </div>
+  </section>
 
-<!-- Footer -->
-<footer>
-  © 2025 Metal Pro – جميع الحقوق محفوظة
-</footer>
+  <!-- معرض الأعمال -->
+  <section>
+    <h2>🖼️ معرض أعمالنا</h2>
+    <div class="gallery">
+      <img src="images/work1.jpg" alt="عمل 1">
+      <img src="images/work2.jpg" alt="عمل 2">
+      <img src="images/work3.jpg" alt="عمل 3">
+    </div>
+    <p>📌 يمكنك إضافة أو استبدال الصور داخل مجلد <b>images</b>.</p>
+  </section>
 
-<!-- WhatsApp floating button -->
-<a href="https://wa.me/963936849441" target="_blank" class="whatsapp-btn">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <!-- زر واتساب عائم -->
+  <a href="https://wa.me/963936849441" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- الفوتر -->
+  <footer>
+    © جميع الحقوق محفوظة – ميتال برو 2025
+  </footer>
 
 </body>
 </html>
