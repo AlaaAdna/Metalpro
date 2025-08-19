@@ -1,157 +1,157 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ميتال برو – Metal Pro</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Tahoma', sans-serif;
-      background-color: #000; /* خلفية سوداء */
-      color: #FFD700; /* ذهبي */
-      line-height: 1.8;
-    }
-    header {
-      background-color: #111;
-      text-align: center;
-      padding: 20px;
-    }
-    header img {
-      max-width: 150px;
-    }
-    h1, h2 {
-      color: #FFD700;
-    }
-    a {
-      color: #0056A4; /* أزرق ملكي */
-      text-decoration: none;
-    }
-    a:hover {
-      color: #FFD700; /* ذهبي عند التمرير */
-    }
-    nav {
-      margin: 10px 0;
-    }
-    nav a {
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    section {
-      padding: 40px 20px;
-      text-align: center;
-      border-bottom: 1px solid #333;
-    }
-    .gallery {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    .gallery img {
-      width: 280px;
-      height: 200px;
-      object-fit: cover;
-      border: 2px solid #0056A4;
-      border-radius: 6px;
-    }
-    footer {
-      background: #111;
-      color: #FFD700;
-      text-align: center;
-      padding: 20px;
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: #0056A4; /* زر واتساب أزرق ملكي */
-      color: white;
-      padding: 12px 18px;
-      border-radius: 50px;
-      font-size: 16px;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    .whatsapp-float:hover {
-      background-color: #FFD700;
-      color: black;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ميتـال برو – Metal Pro | دير الزور</title>
+<style>
+  /* ألوان الموقع */
+  :root {
+    --primary:black;
+    --secondary:#333;
+    --accent:red;
+    --gold:#D4AF37;
+    --white:#fff;
+  }
+  body { margin:0; font-family:Tahoma, Arial, sans-serif; background:var(--white); color:var(--primary); }
+  a { text-decoration:none; color:inherit; }
+  header { background:var(--secondary); color:var(--white); padding:15px 20px; display:flex; justify-content:space-between; align-items:center; }
+  header .logo { font-size:24px; font-weight:bold; color:var(--gold); }
+  nav a { margin-left:15px; color:var(--white); font-weight:bold; }
+  section { padding:60px 20px; }
+  .hero { background:#f7f7f7; text-align:center; padding:80px 20px; }
+  .hero h1 { font-size:36px; margin-bottom:10px; color:var(--primary); }
+  .hero p { font-size:18px; color:var(--secondary); }
+  .services { background:#eee; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+  .service-card { background:var(--white); padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.1); text-align:center; }
+  .service-card h3 { margin-bottom:10px; color:var(--accent); }
+  .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px; }
+  .gallery img { width:100%; border-radius:12px; }
+  .contact { background:#f7f7f7; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+  .contact div { background:var(--white); padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.1); }
+  footer { background:var(--secondary); color:var(--white); text-align:center; padding:20px; position:relative; }
+  footer a { color:var(--gold); margin:0 5px; }
+
+  /* زر واتساب عائم */
+  .whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); }
+  .whatsapp-float img { width: 35px; height: 35px; }
+</style>
 </head>
+
 <body>
 
-  <!-- الهيدر -->
-  <header>
-    <img src="logo.png" alt="شعار ميتال برو"> <!-- ضع شعارك هنا -->
-    <h1>ميتال برو – Metal Pro</h1>
-    <p>حدادة فرنجية وعامة – خبرة واتقان</p>
-    <nav>
-      <a href="#about">من نحن</a>
-      <a href="#services">خدماتنا</a>
-      <a href="#gallery">أعمالنا</a>
-      <a href="#contact">تواصل معنا</a>
-    </nav>
-  </header>
+<!-- الهيدر -->
+<header>
+  <div class="logo">ميتـال برو – Metal Pro</div>
+  <nav>
+    <a href="#about">من نحن</a>
+    <a href="#services">خدماتنا</a>
+    <a href="#gallery">معرض</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+</header>
 
-  <!-- من نحن -->
-  <section id="about">
-    <h2>من نحن</h2>
-    <p>
-      نحن شركة <strong>ميتال برو</strong> متخصصة في جميع أعمال الحدادة الفرنجية والعامة بخبرة عالية
-      وجودة مضمونة. نقدم أحدث التصاميم العصرية للأبواب، الشبابيك، السلالم، الخزانات، والديكورات
-      الحديدية المبتكرة لنحوّل أفكاركم إلى واقع متقن.
-    </p>
-  </section>
+<!-- القسم الرئيسي Hero -->
+<section class="hero">
+  <h1>🧑‍🏭 حدادة فرنجية وعامة | دير الزور</h1>
+  <p>خبرة وجودة عالية في جميع أعمال الحديد ✨</p>
+</section>
 
-  <!-- خدماتنا -->
-  <section id="services">
-    <h2>خدماتنا</h2>
-    <p>
-      • تصنيع أبواب حديد حديثة وعصرية <br>
-      • شبابيك وحمايات حديدية <br>
-      • خزانات مياه ومحروقات بجميع الأحجام <br>
-      • سلالم داخلية وخارجية بتصاميم حديثة <br>
-      • درابزينات بجميع الموديلات <br>
-      • خيم قرميد وخيم متنوعة حسب الطلب <br>
-      • هنكارات صناعية وصناديق سيارات <br>
-      • أعمال الديكور الحديدي (طاولات، كراسي، تجهيز محلات) <br>
-      • جميع أعمال الحدادة حسب الطلب
-    </p>
-  </section>
+<!-- من نحن -->
+<section id="about">
+  <h2>من نحن</h2>
+  <p>
+  نحن في <b>ميتـال برو – Metal Pro</b>، شركة حدادة فرنجية وعامة بخبرة عالية وجودة في التنفيذ. نقدم جميع أعمال الحديد بخبرة وإتقان، مع تصاميم عصرية تناسب كل الأذواق.
+  </p>
+</section>
 
-  <!-- أعمالنا -->
-  <section id="gallery">
-    <h2>معرض أعمالنا</h2>
-    <div class="gallery">
-      <img src="images/work1.jpg" alt="عمل 1">
-      <img src="images/work2.jpg" alt="عمل 2">
-      <img src="images/work3.jpg" alt="عمل 3">
-    </div>
-  </section>
+<!-- الخدمات -->
+<section id="services" class="services">
+  <div class="service-card">
+    <h3>أبواب الحديد</h3>
+    <p>أحدث الموديلات العصرية.</p>
+  </div>
+  <div class="service-card">
+    <h3>الشبابيك والحمايات</h3>
+    <p>تصاميم قوية وعصرية.</p>
+  </div>
+  <div class="service-card">
+    <h3>خزانات مياه ومحروقات</h3>
+    <p>بكافة الأحجام.</p>
+  </div>
+  <div class="service-card">
+    <h3>السلالم والدرابزينات</h3>
+    <p>داخلية وخارجية بطرق عصرية.</p>
+  </div>
+  <div class="service-card">
+    <h3>الخيم والهنكارات</h3>
+    <p>حسب الطلب وكافة الأنواع.</p>
+  </div>
+  <div class="service-card">
+    <h3>ديكورات حديدية</h3>
+    <p>طاولات، كراسي، تجهيز محلات وجميع أعمال الحديد حسب الطلب.</p>
+  </div>
+</section>
 
-  <!-- تواصل معنا -->
-  <section id="contact">
-    <h2>تواصل معنا</h2>
-    <p>📍 العنوان: دير الزور – طريق البصيرة – قرية خشام – جانب ثانوية خشام – محلات العزاوي للحدادة الفرنجية</p>
-    <p>📞 المعلم لؤي: <a href="tel:+963936849441">+963 936 849 441</a></p>
-    <p>📞 العلم علاء: <a href="tel:+963968075166">+963 968 075 166</a></p>
-    <p>🌍 <a href="https://maps.app.goo.gl/SwYpJ916rMkYRutz7?g_st=ac" target="_blank">موقعنا على الخريطة</a></p>
-    <p>
-      <a href="https://www.facebook.com/share/19W8GLdFaQ/" target="_blank">فيسبوك</a> |
-      <a href="https://www.instagram.com/3alaadnan12" target="_blank">إنستغرام</a> |
-      <a href="https://www.tiktok.com/@alaa4x4" target="_blank">تيك توك</a> |
-      <a href="https://youtube.com/@aax44" target="_blank">يوتيوب</a>
-    </p>
-  </section>
+<!-- معرض الأعمال -->
+<section id="gallery" class="gallery">
+  <img src="https://via.placeholder.com/400x300?text=مشروع+1" alt="مشروع 1">
+  <img src="https://via.placeholder.com/400x300?text=مشروع+2" alt="مشروع 2">
+  <img src="https://via.placeholder.com/400x300?text=مشروع+3" alt="مشروع 3">
+</section>
 
-  <!-- الفوتر -->
-  <footer>
-    <p>© 2025 ميتال برو – جميع الحقوق محفوظة</p>
-  </footer>
+<!-- العنوان والتواصل -->
+<section id="contact" class="contact">
+  <div>
+    <h3>عنواننا</h3>
+    <p>دير الزور / طريق البصيرة / قرية خشام – جانب ثانوية خشام – محلات العزاوي للحدادة الفرنجية</p>
+    <iframe src="https://maps.google.com/maps?q=37.5000,38.5000&z=15&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <div>
+    <h3>تواصل معنا</h3>
+    <p>📞 الهاتف: 0936849441</p>
+    <p>📱 واتساب: +963 936 849 441 (المعلم لؤي)</p>
+    <p>📱 واتساب: +963 968 075 166 (المعلم علاء)</p>
+    <p>🌐 [فيسبوك](https://www.facebook.com/share/19W8GLdFaQ/)</p>
+    <p>🎵 [تيك توك](https://www.tiktok.com/@alaa4x4?_t=ZS-8yxXSQ7RxDU&_r=1)</p>
+    <p>📸 [انستغرام](https://www.instagram.com/3alaadnan12?igsh=aXB3MGJyczJsemFl)</p>
+    <p>▶️ [يوتيوب](https://youtube.com/@aax44?si=1ZB5i6OWpBUw-ueP)</p>
+  </div>
+</section>
 
-  <!-- زر واتساب -->
-  <a href="https://wa.me/963936849441" class="whatsapp-float" target="_blank">واتساب</a>
+<!-- الفوتر -->
+<footer>
+  © 2025 Metal Pro – جميع الحقوق محفوظة
+  <div>
+    <a href="https://www.facebook.com/share/19W8GLdFaQ/">فيسبوك</a> | 
+    <a href="https://www.tiktok.com/@alaa4x4?_t=ZS-8yxXSQ7RxDU&_r=1">تيك توك</a> | 
+    <a href="https://www.instagram.com/3alaadnan12?igsh=aXB3MGJyczJsemFl">انستغرام</a> | 
+    <a href="https://youtube.com/@aax44?si=1ZB5i6OWpBUw-ueP">يوتيوب</a>
+  </div>
+</footer>
+
+<!-- زر واتساب عائم -->
+<a href="https://wa.me/963936849441?text=مرحباً%20معلم%20لؤي%2C%20أريد%20الاستفسار%20عن%20خدمات%20ميتـال%20برو" 
+   target="_blank" class="whatsapp-float">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+       alt="WhatsApp">
+</a>
 
 </body>
 </html>
