@@ -9,54 +9,62 @@
 <meta name="keywords" content="حدادة, حدادة فرنجية, حدادة عامة, أبواب حديد, شبابيك حديد, خزانات مياه, سلالم حديد, درابزين, خيم حديدية, دير الزور, Metal Pro, ميتال برو">
 <meta name="author" content="Metal Pro - ميتال برو">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
   :root {
-    --primary:black;
-    --secondary:#333;
-    --accent:red;
+    --primary:#000;
+    --secondary:#222;
+    --accent:#c8102e;   /* أحمر احترافي */
     --gold:#D4AF37;
     --white:#fff;
+    --light:#f7f7f7;
   }
   body { margin:0; font-family:Tahoma, Arial, sans-serif; background:var(--white); color:var(--primary); }
   a { text-decoration:none; color:inherit; }
   header { background:var(--secondary); color:var(--white); padding:15px 20px; display:flex; justify-content:space-between; align-items:center; }
   header .logo { font-size:24px; font-weight:bold; color:var(--gold); }
-  nav a { margin-left:15px; color:var(--white); font-weight:bold; }
+  nav a { margin-left:15px; color:var(--white); font-weight:bold; transition:0.3s; }
+  nav a:hover { color:var(--gold); }
   section { padding:60px 20px; }
 
   /* Hero */
-  .hero { background:#f7f7f7; text-align:center; padding:80px 20px; }
-  .hero h1 { font-size:36px; margin-bottom:10px; }
+  .hero { background:var(--light); text-align:center; padding:80px 20px; }
+  .hero h1 { font-size:36px; margin-bottom:10px; color:var(--accent); }
   .hero p { font-size:18px; color:var(--secondary); }
-  .cta-btn { background:var(--accent); color:#fff; padding:12px 25px; border-radius:8px; font-size:16px; font-weight:bold; display:inline-block; margin-top:20px; }
+  .cta-btn { background:var(--gold); color:#000; padding:12px 25px; border-radius:8px; font-size:16px; font-weight:bold; display:inline-block; margin-top:20px; transition:0.3s; }
+  .cta-btn:hover { background:#b8962d; }
 
   /* Why Us */
   .whyus { background:#fff; text-align:center; }
   .whyus-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; margin-top:30px; }
-  .whyus-card { padding:20px; border:1px solid #ddd; border-radius:10px; background:#f9f9f9; }
+  .whyus-card { padding:20px; border:1px solid #ddd; border-radius:10px; background:#f9f9f9; font-weight:bold; }
+  .whyus-card i { color:var(--gold); margin-left:8px; }
 
   /* Services */
-  .services { background:#eee; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-  .service-card { background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.1); text-align:center; }
+  .services { background:var(--light); display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+  .service-card { background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.1); text-align:center; transition:0.3s; }
+  .service-card:hover { transform:translateY(-5px); }
   .service-card h3 { margin-bottom:10px; color:var(--accent); }
 
   /* Social */
-  .social { background:#f7f7f7; text-align:center; }
-  .social a { display:block; margin:10px auto; padding:12px 20px; border-radius:8px; font-weight:bold; color:#fff; max-width:350px; }
+  .social { background:#fff; text-align:center; }
+  .social a { display:block; margin:10px auto; padding:12px 20px; border-radius:8px; font-weight:bold; color:#fff; max-width:350px; transition:0.3s; }
+  .social a:hover { opacity:0.9; }
 
   /* Stats */
-  .stats { background:#fff; text-align:center; }
+  .stats { background:var(--light); text-align:center; }
   .stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:20px; margin-top:30px; }
   .stat { font-size:22px; font-weight:bold; color:var(--accent); }
   .stat span { display:block; font-size:16px; color:#333; margin-top:5px; }
 
   /* Testimonials */
-  .testimonials { background:#eee; text-align:center; }
+  .testimonials { background:#fff; text-align:center; }
   .testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:30px; }
-  .testimonial { background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.1); font-style:italic; }
+  .testimonial { background:#f9f9f9; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.1); font-style:italic; }
 
   /* FAQ */
-  .faq { background:#f7f7f7; }
+  .faq { background:var(--light); }
   details { margin-bottom:15px; background:#fff; padding:15px; border-radius:8px; cursor:pointer; }
   summary { font-weight:bold; }
 
@@ -66,7 +74,23 @@
 
   /* Footer */
   footer { background:var(--secondary); color:#fff; text-align:center; padding:20px; }
-  footer .social-icons a { margin:0 8px; font-size:20px; }
+  footer .social-icons a { margin:0 8px; font-size:20px; color:var(--gold); }
+
+  /* Floating WhatsApp Button */
+  .whatsapp-float {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:#fff;
+    padding:15px;
+    border-radius:50%;
+    font-size:26px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    z-index:999;
+    transition:0.3s;
+  }
+  .whatsapp-float:hover { transform:scale(1.1); }
 </style>
 </head>
 
@@ -85,9 +109,9 @@
 
 <!-- Hero -->
 <section class="hero">
-  <h1>🧑‍🏭 حدادة فرنجية وعامة | دير الزور</h1>
+  <h1><i class="fa-solid fa-industry"></i> حدادة فرنجية وعامة | دير الزور</h1>
   <p>خبرة وجودة عالية في جميع أعمال الحديد ✨</p>
-  <a href="#contact" class="cta-btn">📞 اطلب عرض سعر الآن</a>
+  <a href="#contact" class="cta-btn"><i class="fa-solid fa-phone"></i> اطلب عرض سعر الآن</a>
 </section>
 
 <!-- About -->
@@ -100,30 +124,30 @@
 <section id="whyus" class="whyus">
   <h2>لماذا تختارنا؟</h2>
   <div class="whyus-cards">
-    <div class="whyus-card">✅ خبرة طويلة</div>
-    <div class="whyus-card">✅ جودة عالية</div>
-    <div class="whyus-card">✅ أسعار منافسة</div>
-    <div class="whyus-card">✅ سرعة التنفيذ</div>
+    <div class="whyus-card"><i class="fa-solid fa-check-circle"></i> خبرة طويلة</div>
+    <div class="whyus-card"><i class="fa-solid fa-check-circle"></i> جودة عالية</div>
+    <div class="whyus-card"><i class="fa-solid fa-check-circle"></i> أسعار منافسة</div>
+    <div class="whyus-card"><i class="fa-solid fa-check-circle"></i> سرعة التنفيذ</div>
   </div>
 </section>
 
 <!-- Services -->
 <section id="services" class="services">
-  <div class="service-card"><h3>أبواب الحديد</h3><p>أحدث الموديلات العصرية.</p></div>
-  <div class="service-card"><h3>الشبابيك والحمايات</h3><p>تصاميم قوية وعصرية.</p></div>
-  <div class="service-card"><h3>الخزانات</h3><p>مياه ومحروقات بكافة الأحجام.</p></div>
-  <div class="service-card"><h3>السلالم والدرابزينات</h3><p>داخلية وخارجية بطرق عصرية.</p></div>
-  <div class="service-card"><h3>الخيم والهنكارات</h3><p>حسب الطلب وكافة الأنواع.</p></div>
-  <div class="service-card"><h3>ديكورات حديدية</h3><p>طاولات، كراسي، تجهيز محلات.</p></div>
+  <div class="service-card"><h3><i class="fa-solid fa-door-closed"></i> أبواب الحديد</h3><p>أحدث الموديلات العصرية.</p></div>
+  <div class="service-card"><h3><i class="fa-solid fa-border-all"></i> الشبابيك والحمايات</h3><p>تصاميم قوية وعصرية.</p></div>
+  <div class="service-card"><h3><i class="fa-solid fa-drum-steelpan"></i> الخزانات</h3><p>مياه ومحروقات بكافة الأحجام.</p></div>
+  <div class="service-card"><h3><i class="fa-solid fa-stairs"></i> السلالم والدرابزينات</h3><p>داخلية وخارجية بطرق عصرية.</p></div>
+  <div class="service-card"><h3><i class="fa-solid fa-warehouse"></i> الخيم والهنكارات</h3><p>حسب الطلب وكافة الأنواع.</p></div>
+  <div class="service-card"><h3><i class="fa-solid fa-couch"></i> ديكورات حديدية</h3><p>طاولات، كراسي، تجهيز محلات.</p></div>
 </section>
 
 <!-- Social Media -->
 <section id="social" class="social">
   <h2>تابع أعمالنا على السوشال ميديا</h2>
-  <a href="https://www.facebook.com/share/19W8GLdFaQ/" target="_blank" style="background:#1877f2;">📘 زور صفحتنا على فيسبوك</a>
-  <a href="https://www.tiktok.com/@alaa4x4?_t=ZS-8yxXSQ7RxDU&_r=1" target="_blank" style="background:#000;">🎵 زور صفحتنا على تيك توك</a>
-  <a href="https://www.instagram.com/3alaadnan12?igsh=aXB3MGJyczJsemFl" target="_blank" style="background:#E4405F;">📸 زور صفحتنا على انستغرام</a>
-  <a href="https://youtube.com/@aax44?si=1ZB5i6OWpBUw-ueP" target="_blank" style="background:#FF0000;">▶️ زور قناتنا على يوتيوب</a>
+  <a href="https://www.facebook.com/share/19W8GLdFaQ/" target="_blank" style="background:#1877f2;"><i class="fa-brands fa-facebook"></i> زور صفحتنا على فيسبوك</a>
+  <a href="https://www.tiktok.com/@alaa4x4?_t=ZS-8yxXSQ7RxDU&_r=1" target="_blank" style="background:#000;"><i class="fa-brands fa-tiktok"></i> زور صفحتنا على تيك توك</a>
+  <a href="https://www.instagram.com/3alaadnan12?igsh=aXB3MGJyczJsemFl" target="_blank" style="background:#E4405F;"><i class="fa-brands fa-instagram"></i> زور صفحتنا على انستغرام</a>
+  <a href="https://youtube.com/@aax44?si=1ZB5i6OWpBUw-ueP" target="_blank" style="background:#FF0000;"><i class="fa-brands fa-youtube"></i> زور قناتنا على يوتيوب</a>
 </section>
 
 <!-- Stats -->
@@ -163,13 +187,13 @@
       <input type="text" placeholder="الاسم" style="width:100%; padding:10px; margin:5px 0;">
       <input type="text" placeholder="رقم الهاتف" style="width:100%; padding:10px; margin:5px 0;">
       <textarea placeholder="رسالتك" style="width:100%; padding:10px; margin:5px 0;"></textarea>
-      <button type="submit" style="background:var(--accent); color:#fff; padding:10px 20px; border:none; border-radius:6px;">إرسال</button>
+      <button type="submit" style="background:var(--accent); color:#fff; padding:10px 20px; border:none; border-radius:6px;"><i class="fa-solid fa-paper-plane"></i> إرسال</button>
     </form>
   </div>
   <div>
     <h3>عنواننا</h3>
     <p>دير الزور / طريق البصيرة / قرية خشام – جانب ثانوية خشام – محلات العزاوي</p>
-    <a href="https://maps.app.goo.gl/aPJ7jacV5b66qDC86?g_st=ipc" target="_blank" style="display:inline-block; background:red; color:#fff; padding:10px 20px; border-radius:8px; margin:10px 0;">📍 موقعنا على الخريطة</a>
+    <a href="https://maps.app.goo.gl/aPJ7jacV5b66qDC86?g_st=ipc" target="_blank" style="display:inline-block; background:var(--accent); color:#fff; padding:10px 20px; border-radius:8px; margin:10px 0;"><i class="fa-solid fa-map-location-dot"></i> موقعنا على الخريطة</a>
   </div>
 </section>
 
@@ -177,12 +201,17 @@
 <footer>
   ©️ 2025 Metal Pro – جميع الحقوق محفوظة
   <div class="social-icons">
-    <a href="https://www.facebook.com/share/19W8GLdFaQ/" target="_blank">📘</a>
-    <a href="https://www.tiktok.com/@alaa4x4?_t=ZS-8yxXSQ7RxDU&_r=1" target="_blank">🎵</a>
-    <a href="https://www.instagram.com/3alaadnan12?igsh=aXB3MGJyczJsemFl" target="_blank">📸</a>
-    <a href="https://youtube.com/@aax44?si=1ZB5i6OWpBUw-ueP" target="_blank">▶️</a>
+    <a href="https://www.facebook.com/share/19W8GLdFaQ/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://www.tiktok.com/@alaa4x4?_t=ZS-8yxXSQ7RxDU&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+    <a href="https://www.instagram.com/3alaadnan12?igsh=aXB3MGJyczJsemFl" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://youtube.com/@aax44?si=1ZB5i6OWpBUw-ueP" target="_blank"><i class="fa-brands fa-youtube"></i></a>
   </div>
 </footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/963936849441" class="whatsapp-float" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
